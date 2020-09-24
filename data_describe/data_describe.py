@@ -2,7 +2,6 @@
 class DataDescribe:
     """
     Created on Sun Jun 16 22:36:39 2019
-
     @author: Gustavo Suto 
     """
     import pandas as pd
@@ -76,7 +75,7 @@ class DataDescribe:
 
         matriz_cardialidade = []
 
-        for i, coluna in enumerate(df_temporario.columns):
+        for coluna in df_temporario.columns:
             matriz_cardialidade.append([coluna, len(df_temporario[coluna].unique()), sorted(df_temporario[coluna].unique())])
 
         matriz_cardialidade = pd.DataFrame(matriz_cardialidade, columns=["Atributo", "Cardinalidade", "Valores"])
@@ -104,8 +103,8 @@ class DataDescribe:
         
         matriz_cardialidade = []
 
-        for i, coluna in df_temporario.items():
-            matriz_cardialidade.append([i, len(df_temporario[i].unique())])
+        for coluna in df_temporario.columns:
+            matriz_cardialidade.append([coluna, len(df_temporario[coluna].unique())])
             
         matriz_cardialidade = pd.DataFrame(matriz_cardialidade, columns=["Atributo", "Cardinalidade"])
         matriz_cardialidade.sort_values(by="Cardinalidade", inplace=True, ascending=True)

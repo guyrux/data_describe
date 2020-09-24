@@ -99,7 +99,7 @@ NAME = PACKAGE
 DESCRIPTION = "Fiz esse pacote com o objetivo didático. Mas também percebi que estava usando algumas das funções em vários projetos. =)"
 AUTHOR = "Gustavo Suto"
 AUTHOR_EMAIL = "guyrux@gmail.com"
-URL = "https://github.com/pythonprobr/libpythonpro"
+URL = "https://github.com/guyrux/data_describe"
 VERSION = __import__(PACKAGE).__version__
 
 setup(
@@ -110,7 +110,7 @@ setup(
     long_description_content_type='text/markdown',
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
-    license="GNU AFFERO GENERAL PUBLIC LICENSE",
+    license=read('LICENSE'),
     url=URL,
     packages=find_packages(exclude=["tests.*", "tests"]),
     package_data=find_package_data(PACKAGE, only_in_packages=False),
@@ -121,11 +121,12 @@ setup(
         "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
         "Framework :: Pytest",
     ],
     install_requires=[
-        'requests'
+        'pandas',
+        'scikit-learn'
     ],
     zip_safe=False,
 )
